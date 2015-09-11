@@ -1,46 +1,51 @@
-# generator-typescript-library [![Build Status](https://secure.travis-ci.org/hourliert/generator-typescript-library.png?branch=master)](https://travis-ci.org/hourliert/generator-typescript-library)
-
-> [Yeoman](http://yeoman.io) generator
-
+# generator-typescript-library [![Build Status](https://travis-ci.org/hourliert/generator-typescript-library.svg)](https://travis-ci.org/hourliert/generator-typescript-library)
 
 ## Getting Started
 
-### What is Yeoman?
-
-Trick question. It's not a thing. It's this guy:
-
-![](http://i.imgur.com/JHaAlBJ.png)
-
-Basically, he wears a top hat, lives in your computer, and waits for you to tell him what kind of application you wish to create.
-
-Not every new computer comes with a Yeoman pre-installed. He lives in the [npm](https://npmjs.org) package repository. You only have to ask for him once, then he packs up and moves into your hard drive. *Make sure you clean up, he likes new and shiny things.*
+### Install
 
 ```bash
-npm install -g yo
+npm install -g yo generator-typescript-library
 ```
 
-### Yeoman Generators
+### Git hook
+This project has a `pre-commit` git hook to compile the library to be production ready before committing. To use it, you need to first initialize a git repository in the generated project folder with `git init` and then run `npm install` (still into the generated project folder) to install the git hook.
 
-Yeoman travels light. He didn't pack any generators when he moved in. You can think of a generator like a plug-in. You get to choose what type of application you wish to create, such as a Backbone application or even a Chrome extension.
+### Structure
 
-To install generator-typescript-library from npm, run:
-
-```bash
-npm install -g generator-typescript-library
+The scaffolded project has this structure:
+```
+.
+├── .codeclimate.yml
+├── .editorconfig
+├── .gitattributes
+├── .gitignore
+├── .jshintrc
+├── .travis.yml
+├── .vscode
+│   └── settings.json
+├── LICENSE
+├── README.md
+├── gulpfile.js
+├── lib
+│   ├── all.d.ts
+│   ├── core.ts
+│   └── test-generator.ts
+├── package.json
+├── scripts
+│   └── dts-bundle.js
+├── test
+│   └── core.ts
+├── tsconfig.json
+└── tsd.json
 ```
 
-Finally, initiate the generator:
+### Gulp tasks
 
-```bash
-yo typescript-library
-```
-
-### Getting To Know Yeoman
-
-Yeoman has a heart of gold. He's a person with feelings and opinions, but he's very easy to work with. If you think he's too opinionated, he can be easily convinced.
-
-If you'd like to get to know Yeoman better and meet some of his friends, [Grunt](http://gruntjs.com) and [Bower](http://bower.io), check out the complete [Getting Started Guide](https://github.com/yeoman/yeoman/wiki/Getting-Started).
-
+* `ci` cleans the project, install type definition files and run unit tests
+* `gulp` runs the `ci` task then it compiles the project in the `./build` folder and finally generates the type definition files of the library in the `./build` folder.
+* `test` and `test:watch` run unit tests whether in watch mode or not
+* `scripts:dev` and `scripts:dev:watch` compiles typescript files in dev mode whether in watch mode or not. (compiled files are not in `./build` folder)
 
 ## License
 
