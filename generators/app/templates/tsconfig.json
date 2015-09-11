@@ -1,0 +1,16 @@
+{
+  "compilerOptions": {
+    "target": "ES5",
+    "module": "commonjs",
+    "sourceMap": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "declaration": true,
+    "outDir": "build"
+  },
+  "filesGlob": [
+    "lib/**/*.ts",  
+    "test/**/*.ts", 
+    "!node_modules/**/*.ts"
+  ]
+}

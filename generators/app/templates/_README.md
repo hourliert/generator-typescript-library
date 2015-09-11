@@ -1,0 +1,2 @@
+# <%= appname %>
+A Typescript Library.
