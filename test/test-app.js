@@ -16,6 +16,7 @@ describe('typescript-library:app', function () {
 
   it('creates files', function () {
     assert.file([
+      'index.js',
       'package.json',
       '.editorconfig',
       '.jshintrc',
