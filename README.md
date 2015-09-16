@@ -6,6 +6,7 @@
 
 ```bash
 npm install -g yo generator-typescript-library
+yo typescript-library
 ```
 
 ### Git hook
