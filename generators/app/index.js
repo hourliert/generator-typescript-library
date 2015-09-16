@@ -57,6 +57,7 @@ module.exports = yeoman.generators.Base.extend({
   app: function () {
     this.template('_package.json', 'package.json');
     this.template('_README.md', 'README.md');
+    this.template('_index.js', 'index.js');
     
     this.copy('codeclimate.yml', '.codeclimate.yml');
     this.copy('editorconfig', '.editorconfig');
