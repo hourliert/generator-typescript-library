@@ -11,7 +11,7 @@
   },
   "scripts": {
     "preinstall": "npm install --ignore-scripts",
-    "postinstall": "tsd link",
+    "postinstall": "gulp tsd",
     "test": "gulp ci"
   },
   "repository": {
